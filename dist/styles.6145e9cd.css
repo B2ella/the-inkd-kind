@@ -1,0 +1,1280 @@
+:root {
+    --white: #ffffff;
+    --dark-grey: rgb(73, 73, 73);
+    --black: rgb(0, 0, 0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    color: var(--white);
+    background-color: var(--black);
+    overflow-x: hidden;
+}
+
+.preloader {
+    background-color: var(--black);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+.preloader span {
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+}
+.preloader span:nth-child(2) {
+    font-size: 70px;
+}
+li {
+    list-style: none;
+}
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* NAVBAR*/
+nav {
+    position: fixed;
+    height: 10vh;
+    width: 100vw;
+    z-index: 999;  
+    
+}
+.nav-menu {
+    position: fixed;
+    right: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 0px 90px; 
+    z-index: 999;  
+}
+.nav-link { 
+    transition: 0.7s ease;
+}
+.nav-link:hover {
+    color: var(--dark-grey);
+}
+.nav-item {
+    transition: transform .5s ease-in-out;
+    -moz-transition: transform .5s ease-in-out;
+    -webkit-transition: transform .5s ease-in-out;
+    font-family: 'Playfair Display', serif;
+}
+.nav-item:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 998;
+}
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 8px auto;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    background-color: var(--white);
+}
+.logo {
+    height: 40px;
+    margin-left: 7em;
+    margin-top: 1em;
+}
+.left-menu-wrapper {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    z-index: 997;
+}
+.right-menu-wrapper {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    z-index: 997;
+}
+.right-menu {
+    margin-top: 20px;
+}
+.left-menu {
+    position: absolute;
+    bottom: 5%;
+}
+.left-menu-bar,
+.right-menu-bar {
+    display: block;
+    transform: rotate(30deg);
+    background-color: var(--white);
+}
+.left-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.right-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.left-menu-container {
+    gap: 10vh;
+}
+.right-menu-container {
+    gap: 10vh;
+}
+.line {
+    display: block;
+    background-color: var(--white);
+    width: 1px;
+    height: 50vh;
+    opacity: 0;
+}
+.socials {
+    position: absolute;
+    bottom: 5%;
+}
+.fb , .insta , .tiktok{
+    display: block;
+    transition: transform .5s ease-in-out;
+    -moz-transition: transform .5s ease-in-out;
+    -webkit-transition: transform .5s ease-in-out;
+}
+.fb:hover , .insta:hover , .tiktok:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.find-us_wrapper {
+    position: relative;
+}
+.find-us {
+    rotate: 90deg;
+    transition: transform .5s ease-in-out;
+    -moz-transition: transform .5s ease-in-out;
+    -webkit-transition: transform .5s ease-in-out;
+}
+.find-us:hover  {
+    color:var(--dark-grey);
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.find-us:hover + .hover_content {
+    display: block;
+    transition: transform .5s ease-in-out;
+    -moz-transition: transform .5s ease-in-out;
+    -webkit-transition: transform .5s ease-in-out;
+}
+.hover_content {
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    background-color: var(--black);
+    font-family:'Playfair Display', serif;  
+}
+.hover_content {
+    display: none;
+}
+
+/* HOME SECTION */
+.bg-image {
+    height: 80vh;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.overlapping-bg-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 100vh; 
+    width: 100vw;
+    z-index: 997;
+}
+
+/* ABOUT SECTION */
+.about-bg {
+    height: auto;
+}
+.about-studio-title {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    vertical-align: bottom;
+ }
+.about-studio-title-grey {
+   color:var(--dark-grey)
+}
+.about-tab {
+   text-align: center;
+   background-color: transparent;
+   color: var(--white);
+   border: none;
+   transition: transform .5s ease-in-out;
+  -moz-transition: transform .5s ease-in-out;
+  -webkit-transition: transform .5s ease-in-out;
+}
+.about-tab:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.about-tab.active  {
+    color: var(--dark-grey);
+}
+
+.content_box .about_content {
+    display: none;
+} 
+.content_box .about_content.active {
+display: block;
+}
+.about-us {
+    font-family: 'Playfair Display', serif;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+
+
+
+@media (max-width: 500px) {
+    .left-menu {
+        display: none;
+    }
+    .find-us_wrapper  {
+        opacity: 0;
+    }
+   
+   
+    
+}
+@media (width <= 768px) {
+    /* NAVBAR / SIDEBAR */
+    .hamburger {
+        display: block;
+        z-index: 998;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -200%;
+        top: 0;
+        gap: 0px;
+        flex-direction: column;
+        justify-content: center;
+        background-color: red;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;   
+        z-index: 997;
+    }
+    .nav-item {
+        margin: 16px 0;
+        font-size: 24px; 
+    }
+    .nav-menu.active {
+        left: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 15vw;
+    }
+    .left-menu-bar {
+        width: 20px;
+        height: 1.5px;
+        margin: 8px auto;
+    }
+    .left-menu-bar:nth-child(1) {
+        width: 30px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 30px;
+    }
+    .find-us {
+        font-size: 24px;   
+    }
+    .hover_content p {
+        font-size: 2.5vw;
+    }
+    .hover_content {
+        width: 30vw;
+        padding: 0.2em 1em;
+    }
+    .fb , .insta , .tiktok {
+        padding-top: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    .right-menu {
+        opacity: 0;
+    }
+
+     /* HOME SECTION */
+     .bg-image {
+        display: none;
+    }
+    /* ABOUT SECTION  */
+    .about-bg {
+        width: 100%;
+        margin-top: 50%;  
+    }
+    .about-studio-title {
+        font-size: 14vw;
+        top: 5%;
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .about-wrapper {
+        margin: 100px 100px 0 100px;
+    }
+    .about-headings {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-tab {
+        font-size: 5vw;
+        margin: 0 40px 20px 0;
+    }
+    .about-tab::after {
+        opacity: 0;
+    }
+    .about-us-info {
+        font-size: 2.5vw;
+        text-align: justify;
+        word-spacing: -1px;   
+    }
+
+    /* THE TEAM SECTION  */
+    .meet-the-team-title {
+        padding-top: 5%;
+    }
+    .meet-the-team-title-grid {
+        grid-template-columns: auto auto;
+    }
+    /* TATTOOIST WORK SECTION */
+    .tattoo-artist-wrapper {
+        width: 100%;
+        height: 30vh;
+        position: relative;
+        top:  10%;
+    }
+    .tattoo-artist {
+        height: 15em;
+        width: 15em;
+        margin: 0%;
+        left: 0;
+    }
+    .tattoo-artist-name {
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        z-index: 2;
+    }
+    .tattoo-artist-name  h1 {
+        font-size: 40px;
+    }
+    .tattoo-artist-name  p {
+        font-size: 20px;
+    }
+    .clients-gallery {
+        margin: 15% 5% ;  
+    }
+}
+
+@media (width > 768px) and (width < 992px) {
+    /* NAVBAR / SIDEBAR */
+    .hamburger {
+        display: block;
+        z-index: 998;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -200%;
+        top: 0;
+        gap: 0px;
+        flex-direction: column;
+        justify-content: center;
+        background-color: red;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;   
+        z-index: 997;
+    }
+    .nav-item {
+        margin: 16px 0;
+        font-size: 24px; 
+    }
+    .nav-menu.active {
+        left: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 15vw;
+    }
+    .left-menu-bar {
+        width: 20px;
+        height: 1.5px;
+        margin: 8px auto;
+    }
+    .left-menu-bar:nth-child(1) {
+        width: 30px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 30px;
+    }
+    .find-us {
+        font-size: 24px;   
+    }
+    .hover_content p {
+        font-size: 20px;
+    }
+    .hover_content {
+        width: 21em;
+        padding: 0.2em 1em;
+    }
+    .fb , .insta , .tiktok {
+        padding-top: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    .right-menu {
+        opacity: 0;
+    }
+
+    /* HOME SECTION */
+    .bg-image {
+        display: none;
+    }
+    .overlapping-bg-img {
+        width: 100vw;
+    }
+
+    /* ABOUT SECTION  */
+    .about-bg {
+        width: 100%;
+        margin-top: 40%;  
+    }
+    .about-studio-title {
+        font-size: 12vw;
+        top: 5%;
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .about-wrapper {
+        margin: 100px 120px;
+    }
+    .about-headings {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-tab {
+        font-size: 5vw;
+        margin: 0 40px 20px 0;
+    }
+    .about-tab::after {
+        opacity: 0;
+    }
+    .about-us-info {
+        font-size: 2.5vw;
+        text-align: justify;
+        word-spacing: -1px;   
+    }
+
+    /* THE TEAM SECTION  */
+    .meet-the-team-title {
+        padding-top: 5%;
+    }
+    .meet-the-team-title-grid {
+        grid-template-columns: auto auto;
+    }
+
+    /* TATTOOIST WORK SECTION */
+    .tattoo-artist-wrapper {
+        width: 100%;
+        height: 40vh;
+        position: relative;
+        top:  10%;
+        display: grid;
+        place-content: center;
+    }
+    .tattoo-artist {
+        height: 18em;
+        width: 18em;
+        margin: 0% 0 20% 0;
+        position: relative;  
+    }
+    .tattoo-artist-name {
+        position: relative;
+        right: 0;
+        text-align: center;  
+    }
+    .tattoo-artist-name  h1 {
+        font-size: 40px;
+    }
+    .tattoo-artist-name  p {
+        font-size: 20px;
+    }
+    .clients-gallery {
+        margin-top: 20%;  
+    }
+}
+
+@media (min-width: 992px) {
+    /* NAVBAR / SIDEBAR */
+    .nav-item {
+       margin: 20px 0;
+       font-size: 24px; 
+   }
+    .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 5vw; 
+        padding: 0 8px;
+        background-color: var(--black);
+   }
+    .left-menu-bar,
+    .right-menu-bar {
+        width: 30px;
+        height: 1.5px;
+        margin: 12px auto;
+    }
+    .right-menu {
+        margin-top: 40%;
+        opacity: 100%;
+    }
+    .left-menu-bar:nth-child(1) {
+        width: 40px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 40px;
+    }
+    .right-menu-bar:nth-child(1) {
+        width: 40px;
+    }
+    .right-menu-bar:nth-child(3) {
+        width: 40px;
+    }
+   .line {
+       opacity: 100%;
+   }
+   .find-us {
+       font-size: 3vw;     
+   }
+   .hover_content p {
+       font-size: 20px;
+   }
+   .hover_content {
+       width: 21em;
+       padding:  0.4em 1em  ;
+   }
+   .fb , .insta , .tiktok {
+       padding-top: 20px;
+       width: 55px;
+       height: 55px;
+   }
+   /* HOME SECTION */
+.bg-image {
+    display:flex;
+}
+.overlapping-bg-img {
+    width: 60vw;
+}
+/* ABOUT SECTION  */
+.about-bg {
+    width: 80%;
+    margin: 35% 10% 0 10%;  
+}
+.about-studio-title {
+    font-size: 10.5vw;
+    top: 5%;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.about-wrapper {
+    margin: 10% 20%;
+}
+.about-headings {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-tab {
+    font-size: 4vw;
+    margin: 0 40px 20px 0;
+}
+.about-us-info {
+    font-size: 2vw;
+    text-align: justify;
+    word-spacing: -1px;   
+}
+
+/* THE TEAM SECTION  */
+.meet-the-team-title {
+    padding-top: 5%;
+}
+.meet-the-team-title-grid {
+    grid-template-columns: auto auto;
+}
+
+/* TATTOOIST WORK SECTION */
+.tattoo-artist-wrapper {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    top:  10%;
+    display: grid;
+    place-content: center;
+}
+.tattoo-artist {
+    height: 18em;
+    width: 18em;
+    margin: 0% 0 20% 0;
+    position: relative;  
+}
+.tattoo-artist-name {
+    position: relative;
+    right: 0;
+    text-align: center;  
+}
+.tattoo-artist-name  h1 {
+    font-size: 40px;
+}
+.tattoo-artist-name  p {
+    font-size: 20px;
+}
+.clients-gallery {
+    margin-top: 25%;  
+}
+}
+
+@media (min-width: 1200px) {
+    /* NAVBAR / SIDEBAR */
+    .nav-item {
+        font-size: 2vw;
+        margin-top: 5%;
+    }
+    .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 8vw;
+        background-color: var(--black) 
+    }
+    .left-menu-container,
+    .right-menu-container {
+        margin-top: 20%;
+    }
+    .left-menu-bar,
+    .right-menu-bar {
+        width: 25px;
+        height: 1.5px;
+        margin: 10px auto;
+    }
+    .left-menu {
+        margin: 0%;
+    }
+    .right-menu {
+        opacity: 100%;
+    }
+    .left-menu-bar:nth-child(1) {
+        width: 40px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 40px;
+    }
+    .right-menu-bar:nth-child(1) {
+        width: 40px;
+    }
+    .right-menu-bar:nth-child(3) {
+        width: 40px;
+    }
+    .line {
+        opacity: 100%; 
+        margin-top: 60%;
+    }
+    .right-menu-wrapper .line {
+        margin-top: 30%;
+    }
+    .find-us {
+        font-size: 2vw; 
+    }
+    .hover_content p {
+        font-size: 1vw;
+        font-weight: bold;
+    }
+    .hover_content {
+        position: absolute;
+        left: 5em;
+        bottom: 20%;
+        width: 20em;
+        padding: 1em ;
+    }
+    .fb , .insta , .tiktok {
+        padding-top: 15px;
+        width: 50px;
+        height: 50px; 
+    }
+    /* HOME SECTION */
+.bg-image {
+    display:flex;
+    margin-top: 10%;
+}
+.overlapping-bg-img {
+    width: 60vw;
+}
+/* ABOUT SECTION  */
+.about-bg {
+    width: 70%;
+    margin: 20% 15% 0 15%;  
+}
+.about-studio-title {
+    font-size: 9vw;
+    top: 5%;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.about-wrapper {
+    margin: 10% 20%;
+}
+.about-headings {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-tab {
+    font-size: 3.5vw;
+    margin: 0 40px 20px 0;
+}
+.about-us-info {
+    font-size: 1.8vw;
+    text-align: justify;
+    word-spacing: -1px;   
+}
+
+/* THE TEAM SECTION  */
+.meet-the-team-title {
+    padding-top: 5%;
+}
+.meet-the-team-title-grid {
+    grid-template-columns: auto auto auto;
+}
+/* TATTOOIST WORK SECTION */
+.tattoo-artist-wrapper {
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    top:  10%;
+}
+.tattoo-artist {
+   height: 20em;
+   width: 20em;
+   position: absolute;
+   left: 3.5%;
+   margin: 2% 0 0 0;
+}
+.tattoo-artist-video {
+  display: block;
+}
+.tattoo-artist-name {
+    position: absolute;
+    right: 15%;
+    bottom: 20%;
+    text-align: left;
+}
+.tattoo-artist-name  h1 {
+    font-size: 60px;
+}
+.tattoo-artist-name  p {
+    font-size: 20px;
+}
+.clients-gallery {
+    margin-top: 20%;  
+}
+}
+
+@media (min-width: 1352px) {
+    /* NAVBAR / SIDEBAR */
+     .nav-item {
+        font-size: 1.2vw;
+        margin-top: 2%;
+    }
+    .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 3vw;
+        background-color: var(--black);
+    }
+    .left-menu-container,
+    .right-menu-container {
+        margin: 0%;
+    }
+     .left-menu-bar,
+     .right-menu-bar {
+         width: 20px;
+         height: 1.5px;
+         margin: 8px auto;
+     }
+     .left-menu {
+        margin: 0%;
+     }
+     .right-menu {
+        opacity: 100%;
+     }
+     .left-menu-bar:nth-child(1) {
+        width: 30px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 30px;
+    }
+    .right-menu-bar:nth-child(1) {
+        width: 30px;
+    }
+    .right-menu-bar:nth-child(3) {
+        width: 30px;
+    }
+    .line {
+        opacity: 100%; 
+        margin-top: 0%;
+    }
+    .right-menu-wrapper .line {
+        margin-top: 0%;
+        margin-bottom: -15%;
+    }
+    .find-us {
+        font-size: 1.5vw; 
+    }
+    
+    .hover_content p {
+        font-size: 13px;
+    }
+    .hover_content {
+        left: 5em;
+        width: 15em;
+        padding: 1em;
+    }
+    .fb , .insta , .tiktok {
+        padding-top: 12px;
+        width: 30px;
+        height: 30px; 
+    }
+
+    /* HOME SECTION */
+.bg-image {
+    display:flex;
+    width: 90vw;
+    margin-top: 5%;
+}
+.overlapping-bg-img {
+    width: 30vw;
+}
+/* ABOUT SECTION  */
+.about-bg {
+    width: 100%;
+    margin:  0;
+}
+.about-studio-title {
+    font-size: 8.5vw;
+    top: 80%;   
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.about-wrapper {
+    margin: 50% 10%;
+}
+.about-headings {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-tab {
+    font-size: 1.7vw;
+}
+.about-us {
+    font-size: 1.1vw;  
+    width: 85%;
+    text-align: justify;  
+}
+
+/* THE TEAM SECTION  */
+.meet-the-team-title {
+    padding-top: 5%;
+}
+.meet-the-team-title-grid {
+    grid-template-columns: auto auto auto;
+}
+/* TATTOOIST WORK SECTION */
+.tattoo-artist-wrapper {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    top:  10%;
+}
+.tattoo-artist {
+   height: 20em;
+   width: 20em;
+   position: absolute;
+   left: 3.5%;
+   margin: 3.5% 0 0 0;
+}
+.tattoo-artist-video {
+  display: block;
+}
+.tattoo-artist-name {
+    position: absolute;
+    right: 25%;
+    bottom: 10%;
+    text-align: left;
+}
+.tattoo-artist-name  h1 {
+    font-size: 60px;
+}
+.tattoo-artist-name  p {
+    font-size: 20px;
+}
+.clients-gallery {
+    margin-top: 15%;  
+}
+}
+
+@media (min-width: 1536px) {
+    /* SIDEBAR / MENU */
+ .nav-item {
+    font-size: 1.2vw;
+    margin-top: 2%;
+}
+ .left-menu-wrapper,
+.right-menu-wrapper {
+    width: 5vw;
+    background-color: var(--black) 
+}
+ .left-menu-bar,
+ .right-menu-bar {
+     width: 20px;
+     height: 1.5px;
+     margin: 8px auto;
+ }
+ .left-menu {
+    margin: 0%;
+ }
+ .right-menu {
+    opacity: 100%;
+ }
+ .left-menu-bar:nth-child(1) {
+    width: 30px;
+}
+.left-menu-bar:nth-child(3) {
+    width: 30px;
+}
+.right-menu-bar:nth-child(1) {
+    width: 30px;
+}
+.right-menu-bar:nth-child(3) {
+    width: 30px;
+}
+.line {
+    opacity: 100%; 
+}
+.find-us {
+    font-size: 1.5vw; 
+}
+.hover_content p {
+    font-size: 1vw;
+    font-weight: bold;
+}
+.hover_content {
+    position: absolute;
+    left: 5em;
+    bottom: 20%;
+    width: 20em;
+    padding: 1em ;
+}
+.fb , .insta , .tiktok {
+    padding-top: 12px;
+    width: 40px;
+    height: 40px; 
+}
+
+ /* HOME SECTION */
+ .bg-image {
+    display:flex;
+    width: 80vw;
+}
+/* ABOUT SECTION  */
+.about-bg {
+    width: 100%;
+    margin:  0;
+}
+.about-studio-title {
+    font-size: 9vw;
+    top: 80%;  
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.about-wrapper {
+    margin: 50% 10%;
+}
+.about-headings {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-tab,
+.about-tab {
+    font-size: 1.7vw;
+}
+.about-heading-op1::after {
+    width: 80px;
+    top: 11em;
+    right: 290px;
+}
+  .about-heading-op2::after {
+    width: 100px;
+    top: 11em;
+    right: 130px;
+}
+.about-us-info {
+    font-size: 1.2vw;  
+}
+
+/* THE TEAM SECTION  */
+.meet-the-team-title {
+    padding-top: 5%;
+}
+.meet-the-team-title-grid {
+    grid-template-columns: auto auto auto;
+}
+ /* TATTOOIST WORK SECTION */
+.tattoo-artist-wrapper {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    top:  10%;
+}
+.tattoo-artist {
+   height: 20em;
+   width: 20em;
+   left: 3.5%;
+   margin-top: 3.5%;
+}
+.tattoo-artist-video {
+  display: block;
+}
+.tattoo-artist-name {
+    right: 25%;
+    bottom: 10%; 
+}
+.tattoo-artist-name  h1 {
+    font-size: 60px;
+}
+.tattoo-artist-name  p {
+    font-size: 20px;
+}
+}
+
+@media (min-width: 2560px) {
+    /* SIDEBAR / MENU */
+    .nav-menu  {
+        right: 50px;
+    }
+     .nav-item {
+        font-size: 1.2vw;
+        margin-top: 2%;
+    }
+     .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 5vw;
+        background-color: var(--black) 
+    }
+     .left-menu-bar,
+     .right-menu-bar {
+         width: 30px;
+         height: 1.5px;
+         margin: 15px auto;
+     }
+     .left-menu {
+        margin: 0%;
+     }
+     .right-menu {
+        opacity: 100%;
+        margin-top: 30%;
+     }
+     .left-menu-bar:nth-child(1) {
+        width: 50px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 50px;
+    }
+    .right-menu-bar:nth-child(1) {
+        width: 50px;
+    }
+    .right-menu-bar:nth-child(3) {
+        width: 50px;
+    }
+    .line {
+        opacity: 100%; 
+    }
+    .find-us {
+        font-size: 1.5vw; 
+    }
+    .hover_content p {
+        font-size: 1vw;
+        font-weight: bold;
+    }
+    .hover_content {
+        position: absolute;
+        left: 5em;
+        bottom: 20%;
+        width: 20em;
+        padding: 1em ;
+    }
+    .fb , .insta , .tiktok {
+        padding-top: 15px;
+        width: 60px;
+        height: 60px; 
+    }
+    /* HOME SECTION */
+    .bg-image {
+        display:flex;
+        width: 80vw;
+    }
+    /* ABOUT SECTION  */
+    .about-bg {
+        width: 100%;
+        margin:  0;
+    }
+    .about-studio-title {
+        font-size: 9vw;
+        top: 80%;  
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .about-wrapper {
+        margin: 50% 10%;
+    }
+    .about-headings {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-tab,
+    .about-tab {
+        font-size: 1.7vw;
+    }
+    .about-us-info {
+        font-size: 1.2vw;  
+    }
+    
+    /* THE TEAM SECTION  */
+    .meet-the-team-title {
+        padding-top: 5%;
+    }
+    .meet-the-team-title-grid {
+        grid-template-columns: auto auto auto;
+    }
+     /* TATTOOIST WORK SECTION */
+    .tattoo-artist-wrapper {
+        width: 100%;
+        height: 60vh;
+        position: relative;
+        top:  10%;
+    }
+    .tattoo-artist {
+       height: 40em;
+       width: 40em;
+       left: 3.5%;
+       margin-top: 2%;
+    }
+    .tattoo-artist-video {
+      display: block;
+    }
+    .tattoo-artist-name {
+        right: 30%;
+        bottom: 10%; 
+    }
+    .tattoo-artist-name  h1 {
+        font-size: 90px;
+    }
+    .tattoo-artist-name  p {
+        font-size: 40px;
+    }
+    .clients-gallery {
+        margin: 15% 5% ; 
+        gap: 10px; 
+    }
+}
+
+/*# sourceMappingURL=/styles.6145e9cd.css.map */
