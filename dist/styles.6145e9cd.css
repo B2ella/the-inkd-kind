@@ -265,7 +265,6 @@ nav {
 .about-tab.active  {
     color: var(--dark-grey);
 }
-
 .content_box .about_content {
     display: none;
 } 
@@ -280,7 +279,103 @@ display: block;
     grid-template-columns: 2fr 1fr;
 }
 
+ /* THE TEAM SECTION */
+ .meet-the-team-container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+ }
+ .meet-the-team-title {
+     font-size: 9vw; 
+     color:var(--dark-grey);
+     text-align: center;
+ }
+ .meet-the-team-title-us {
+    color: var(--white)
+}
+.meet-the-team-title-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 60px;
+    margin: 100px;  
+}
+.meet-the-team-title-img {
+    height: 100%;
+    width: 100%;
+}
+.img-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.img-wrapper:hover .description-box {
+    visibility: visible;
+    opacity: 1;
+}
+.description-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--black);
+  color: var(--white);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .6s, visibility .2s;  
+}
+.description-wrapper {
+  display: grid;
+  place-content: center;
+  height: 100%
+}
+.description {
+  font-size: 2.1vw;
+  text-transform:capitalize;
+}
+.speciality {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.8vw;
+}
 
+/* TATTOOIST WORK SECTION */
+.tattoo-artist-container {
+    height: 100vh;
+    width: 80vw;
+    position: relative;
+    margin: 0 10%;
+}
+.tattoo-artist-wrapper {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    top:  10%;
+}
+.tattoo-artist {
+   position: absolute;
+   z-index: 1 ;
+}
+.tattoo-artist-video {
+  display: none;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+.tattoo-artist-name {
+    position: absolute;
+    z-index: 2;
+}
+
+.clients-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));     
+}
+.clients-img {
+    width: 16em;
+    margin-bottom: 1rem;
+}
 
 
 @media (max-width: 500px) {
@@ -291,7 +386,98 @@ display: block;
         opacity: 0;
     }
    
-   
+  /* CONTACT SECTION  */
+ .first-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+ }
+ .contact-title {
+    font-size: 18vw;
+    color: var(--dark-grey);
+ }
+
+.contact-title-touch {
+    color:var(--white)
+}
+ .slogan {  
+    height: 20em;
+ }
+ .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100vw;
+}
+.send-us {
+    font-weight: bold;
+}
+.contact-heading {
+    text-transform: uppercase;
+}
+.contact-grid a , .contact-info {
+    text-transform: lowercase;
+    font-family: 'Playfair Display', serif;  
+}
+.enquiry {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.fa-arrow-right-long {
+    display: block;
+    font-size: 30px;
+    -webkit-animation: bounceRight 2s infinite;
+  animation: bounceRight 2s infinite;
+}
+@-webkit-keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    40% {
+      -webkit-transform: translateX(-30px);
+      transform: translateX(-30px);
+    }
+    60% {
+      -webkit-transform: translateX(-15px);
+      transform: translateX(-15px);
+    }
+}
+  @-moz-keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-30px);
+    }
+    60% {
+      transform: translateX(-15px);
+    }
+}
+  @keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+    40% {
+      -ms-transform: translateX(-30px);
+      transform: translateX(-30px);
+    }
+    60% {
+      -ms-transform: translateX(-15px);
+      transform: translateX(-15px);
+    }
+} 
     
 }
 @media (width <= 768px) {
@@ -373,11 +559,11 @@ display: block;
     /* ABOUT SECTION  */
     .about-bg {
         width: 100%;
-        margin-top: 50%;  
+        margin-top: 55%;  
     }
     .about-studio-title {
         font-size: 14vw;
-        top: 5%;
+        top: 2%;
     }
     .about-grid {
         display: grid;
@@ -437,6 +623,46 @@ display: block;
     }
     .clients-gallery {
         margin: 15% 5% ;  
+    }
+
+    /* CONTACT SECTION  */
+    .grid-wrapper {
+        position: absolute;
+        top: 0;
+        width:100%;
+        text-align: center;
+    }
+    .first-grid{
+        display: grid;
+        grid-template-columns: 1fr;;
+     }
+     .contact-title {
+        font-size: 17vw;
+        margin-top: 10%;
+     }
+     .slogan {
+        height: 21em;
+        margin-bottom: 5%;
+     }
+     .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+    .send-us {
+        font-size: 4vw ;   
+    }
+    .contact-heading {
+        font-size: 4vw ;
+        margin-top: 30px;
+    }
+    .contact-info {
+        font-size: 3vw;
+        margin-top: 10px;  
+        margin: 0 100px 0 100px;
+    }
+    .fa-arrow-right-long {
+        margin-top: 2%;
     }
 }
 
@@ -523,11 +749,11 @@ display: block;
     /* ABOUT SECTION  */
     .about-bg {
         width: 100%;
-        margin-top: 40%;  
+        margin-top: 50%;  
     }
     .about-studio-title {
         font-size: 12vw;
-        top: 5%;
+        top: 2%;
     }
     .about-grid {
         display: grid;
@@ -590,6 +816,46 @@ display: block;
     .clients-gallery {
         margin-top: 20%;  
     }
+
+     /* CONTACT SECTION  */
+    .grid-wrapper {
+        position: absolute;
+        top: 0;
+        width:100%;
+        text-align: center;
+    }
+    .first-grid {
+        display: grid;
+        grid-template-columns: 1fr;;
+    }
+    .contact-title {
+        font-size: 17vw;
+        margin-top: 10%;
+    }
+    .slogan {
+        height: 21em;
+        margin-bottom: 5%;
+    }
+    .contact-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+    .send-us {
+        font-size: 4vw ;   
+    }
+    .contact-heading {
+        font-size: 4vw ;
+        margin-top: 30px;
+    }
+    .contact-info {
+        font-size: 3vw;
+        margin-top: 10px;  
+        margin: 0 100px 0 100px;
+    }
+    .fa-arrow-right-long {
+        margin-top: 2%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -644,80 +910,124 @@ display: block;
        width: 55px;
        height: 55px;
    }
+
    /* HOME SECTION */
-.bg-image {
-    display:flex;
-}
-.overlapping-bg-img {
-    width: 60vw;
-}
-/* ABOUT SECTION  */
-.about-bg {
-    width: 80%;
-    margin: 35% 10% 0 10%;  
-}
-.about-studio-title {
-    font-size: 10.5vw;
-    top: 5%;
-}
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-.about-wrapper {
-    margin: 10% 20%;
-}
-.about-headings {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.about-tab {
-    font-size: 4vw;
-    margin: 0 40px 20px 0;
-}
-.about-us-info {
-    font-size: 2vw;
-    text-align: justify;
-    word-spacing: -1px;   
-}
+    .bg-image {
+        display:flex;
+    }
+    .overlapping-bg-img {
+        width: 60vw;
+    }
 
-/* THE TEAM SECTION  */
-.meet-the-team-title {
-    padding-top: 5%;
-}
-.meet-the-team-title-grid {
-    grid-template-columns: auto auto;
-}
+    /* ABOUT SECTION  */
+    .about-bg {
+        width: 80%;
+        margin: 40% 10% 0 10%;  
+    }
+    .about-studio-title {
+        font-size: 10.5vw;
+        top: 5%;
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .about-wrapper {
+        margin: 10% 20%;
+    }
+    .about-headings {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-tab {
+        font-size: 4vw;
+        margin: 0 40px 20px 0;
+    }
+    .about-us-info {
+        font-size: 2vw;
+        text-align: justify;
+        word-spacing: -1px;   
+    }
 
-/* TATTOOIST WORK SECTION */
-.tattoo-artist-wrapper {
-    width: 100%;
-    height: 40vh;
-    position: relative;
-    top:  10%;
-    display: grid;
-    place-content: center;
-}
-.tattoo-artist {
-    height: 18em;
-    width: 18em;
-    margin: 0% 0 20% 0;
-    position: relative;  
-}
-.tattoo-artist-name {
-    position: relative;
-    right: 0;
-    text-align: center;  
-}
-.tattoo-artist-name  h1 {
-    font-size: 40px;
-}
-.tattoo-artist-name  p {
-    font-size: 20px;
-}
-.clients-gallery {
-    margin-top: 25%;  
-}
+    /* THE TEAM SECTION  */
+    .meet-the-team-title {
+        padding-top: 5%;
+    }
+    .meet-the-team-title-grid {
+        grid-template-columns: auto auto;
+    }
+
+    /* TATTOOIST WORK SECTION */
+    .tattoo-artist-wrapper {
+        width: 100%;
+        height: 40vh;
+        position: relative;
+        top:  10%;
+        display: grid;
+        place-content: center;
+    }
+    .tattoo-artist {
+        height: 18em;
+        width: 18em;
+        margin: 0% 0 20% 0;
+        position: relative;  
+    }
+    .tattoo-artist-name {
+        position: relative;
+        right: 0;
+        text-align: center;  
+    }
+    .tattoo-artist-name  h1 {
+        font-size: 40px;
+    }
+    .tattoo-artist-name  p {
+        font-size: 20px;
+    }
+    .clients-gallery {
+        margin-top: 25%;  
+    }
+
+    /* CONTACT SECTION  */
+    .grid-wrapper {
+        position: absolute;
+        top: 0;
+        width:100%;
+        text-align: center;
+    }
+    .first-grid{
+        display: grid;
+        grid-template-columns: 1fr;;
+    }
+    .contact-title {
+        font-size: 15vw;
+        text-align: center;
+        margin-top: 5%;
+    }
+    .slogan {
+        height: 25em;
+        margin-top: -5%;
+        margin-bottom: 5%;
+    }
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr; 
+        width: 50%;
+        margin: 0 25%;
+    }
+    .send-us {
+        font-size: 3vw ;   
+    }
+    .contact-heading {
+        font-size: 3vw ;
+        margin-top: 30px;
+    }
+
+    .contact-info {
+        font-size: 2.7vw;
+    }
+    .fa-arrow-right-long {
+        margin-top: 2%;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -728,7 +1038,7 @@ display: block;
     }
     .left-menu-wrapper,
     .right-menu-wrapper {
-        width: 8vw;
+        width: 5vw;
         background-color: var(--black) 
     }
     .left-menu-container,
@@ -785,83 +1095,132 @@ display: block;
         width: 50px;
         height: 50px; 
     }
-    /* HOME SECTION */
-.bg-image {
-    display:flex;
-    margin-top: 10%;
-}
-.overlapping-bg-img {
-    width: 60vw;
-}
-/* ABOUT SECTION  */
-.about-bg {
-    width: 70%;
-    margin: 20% 15% 0 15%;  
-}
-.about-studio-title {
-    font-size: 9vw;
-    top: 5%;
-}
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-.about-wrapper {
-    margin: 10% 20%;
-}
-.about-headings {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.about-tab {
-    font-size: 3.5vw;
-    margin: 0 40px 20px 0;
-}
-.about-us-info {
-    font-size: 1.8vw;
-    text-align: justify;
-    word-spacing: -1px;   
-}
 
-/* THE TEAM SECTION  */
-.meet-the-team-title {
-    padding-top: 5%;
-}
-.meet-the-team-title-grid {
-    grid-template-columns: auto auto auto;
-}
-/* TATTOOIST WORK SECTION */
-.tattoo-artist-wrapper {
-    width: 100%;
-    height: 30vh;
-    position: relative;
-    top:  10%;
-}
-.tattoo-artist {
-   height: 20em;
-   width: 20em;
-   position: absolute;
-   left: 3.5%;
-   margin: 2% 0 0 0;
-}
-.tattoo-artist-video {
-  display: block;
-}
-.tattoo-artist-name {
+    /* HOME SECTION */
+    .bg-image {
+        display:flex;
+        margin-top: 10%;
+    }
+    .overlapping-bg-img {
+        width: 60vw;
+    }
+    
+    /* ABOUT SECTION  */
+    .about-bg {
+        width: 70%;
+        margin: 30% 15% 0 15%;  
+    }
+    .about-studio-title {
+        font-size: 8.5vw;
+        top: 5%;
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .about-wrapper {
+        margin: 10% 20%;
+    }
+    .about-headings {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-tab {
+        font-size: 3.5vw;
+        margin: 0 40px 20px 0;
+    }
+    .about-us-info {
+        font-size: 1.8vw;
+        text-align: justify;
+        word-spacing: -1px;   
+    }
+
+    /* THE TEAM SECTION  */
+    .meet-the-team-title {
+        padding-top: 5%;
+    }
+    .meet-the-team-title-grid {
+        grid-template-columns: auto auto auto;
+    }
+    /* TATTOOIST WORK SECTION */
+    .tattoo-artist-wrapper {
+        width: 100%;
+        height: 30vh;
+        position: relative;
+        top:  10%;
+    }
+    .tattoo-artist {
+    height: 20em;
+    width: 20em;
     position: absolute;
-    right: 15%;
-    bottom: 20%;
-    text-align: left;
-}
-.tattoo-artist-name  h1 {
-    font-size: 60px;
-}
-.tattoo-artist-name  p {
-    font-size: 20px;
-}
-.clients-gallery {
-    margin-top: 20%;  
-}
+    left: 3.5%;
+    margin: 2% 0 0 0;
+    }
+    .tattoo-artist-video {
+    display: block;
+    }
+    .tattoo-artist-name {
+        position: absolute;
+        right: 15%;
+        bottom: 20%;
+        text-align: left;
+    }
+    .tattoo-artist-name  h1 {
+        font-size: 60px;
+    }
+    .tattoo-artist-name  p {
+        font-size: 20px;
+    }
+    .clients-gallery {
+        margin-top: 20%;  
+    }
+
+    /* CONTACT SECTION  */
+    .grid-wrapper {
+        position: absolute;
+        bottom: 0;
+        width:100%;
+    }
+    .first-grid{
+        display: grid;
+        grid-template-columns: 1fr;;
+    }
+    .contact-title {
+        font-size: 15vw;
+        text-align: center;
+    }
+    .slogan {
+        height: 28em;
+        margin-top: -2%;
+        margin-bottom: 5%;
+    }
+    .contact-wrapper {
+        position: absolute;
+        bottom: 0;
+        text-align: left;
+    }
+    .contact-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        gap: 80px;
+        width: 90vw; 
+        margin: 5% ;
+    }
+    .send-us {
+        font-size: 2.2vw;   
+    }
+    .contact-heading {
+        font-size: 2.2vw ;
+        margin-top: 30px;
+    }
+    .contact-info {
+        font-size: 1.7vw;
+        margin: 2.5% 0 0 0;
+    }
+    .fa-arrow-right-long {
+        margin-top: 2%;
+        margin-left: 15%;
+    }
 }
 
 @media (min-width: 1352px) {
@@ -930,82 +1289,129 @@ display: block;
     }
 
     /* HOME SECTION */
-.bg-image {
-    display:flex;
-    width: 90vw;
-    margin-top: 5%;
-}
-.overlapping-bg-img {
-    width: 30vw;
-}
-/* ABOUT SECTION  */
-.about-bg {
-    width: 100%;
-    margin:  0;
-}
-.about-studio-title {
-    font-size: 8.5vw;
-    top: 80%;   
-}
-.about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-.about-wrapper {
-    margin: 50% 10%;
-}
-.about-headings {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.about-tab {
-    font-size: 1.7vw;
-}
-.about-us {
-    font-size: 1.1vw;  
-    width: 85%;
-    text-align: justify;  
-}
+    .bg-image {
+        display:flex;
+        width: 90vw;
+        margin-top: 5%;
+    }
+    .overlapping-bg-img {
+        width: 30vw;
+    }
+    /* ABOUT SECTION  */
+    .about-bg {
+        width: 100%;
+        margin:  0;
+    }
+    .about-studio-title {
+        font-size: 9vw;
+        top: 80%;   
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .about-wrapper {
+        margin: 50% 10%;
+    }
+    .about-headings {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-tab {
+        font-size: 1.7vw;
+    }
+    .about-us {
+        font-size: 1.1vw;  
+        width: 85%;
+        text-align: justify;  
+    }
 
-/* THE TEAM SECTION  */
-.meet-the-team-title {
-    padding-top: 5%;
-}
-.meet-the-team-title-grid {
-    grid-template-columns: auto auto auto;
-}
-/* TATTOOIST WORK SECTION */
-.tattoo-artist-wrapper {
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    top:  10%;
-}
-.tattoo-artist {
-   height: 20em;
-   width: 20em;
-   position: absolute;
-   left: 3.5%;
-   margin: 3.5% 0 0 0;
-}
-.tattoo-artist-video {
-  display: block;
-}
-.tattoo-artist-name {
-    position: absolute;
-    right: 25%;
-    bottom: 10%;
-    text-align: left;
-}
-.tattoo-artist-name  h1 {
-    font-size: 60px;
-}
-.tattoo-artist-name  p {
-    font-size: 20px;
-}
-.clients-gallery {
-    margin-top: 15%;  
-}
+    /* THE TEAM SECTION  */
+    .meet-the-team-title {
+        padding-top: 5%;
+    }
+    .meet-the-team-title-grid {
+        grid-template-columns: auto auto auto;
+    }
+    /* TATTOOIST WORK SECTION */
+    .tattoo-artist-wrapper {
+        width: 100%;
+        height: 60vh;
+        position: relative;
+        top:  10%;
+    }
+    .tattoo-artist {
+        height: 20em;
+        width: 20em;
+        position: absolute;
+        left: 3.5%;
+        margin: 3.5% 0 0 0;
+    }
+    .tattoo-artist-video {
+        display: block;
+    }
+    .tattoo-artist-name {
+        position: absolute;
+        right: 25%;
+        bottom: 10%;
+        text-align: left;
+    }
+    .tattoo-artist-name  h1 {
+        font-size: 60px;
+    }
+    .tattoo-artist-name  p {
+        font-size: 20px;
+    }
+    .clients-gallery {
+        margin-top: 15%;  
+    }
+
+    /* CONTACT SECTION  */
+    .grid-wrapper {
+        position: absolute;
+        bottom: 0;
+        width:100%;
+        text-align: left;
+    }
+    .first-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        margin: 0 5% 0 5%;
+    }
+    .contact-title {
+        font-size: 15vw;
+        text-align: left;
+        margin-top: 0;
+        margin-left: 5%;
+    }
+    .slogan {
+        height: 26em;
+    }
+    .contact-wrapper {
+        position: absolute;
+        bottom: 0;
+    }
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr; 
+        width: 90vw; 
+        margin: 5% 4%;
+    }
+    .send-us {
+        font-size: 1.7vw;   
+    }
+    .contact-heading {
+        font-size: 1.3vw ;
+        margin-top: 30px;
+    }
+    .contact-info {
+        font-size: 1.3vw;
+        margin: 2.5% 0 0 0;
+    }
+    .fa-arrow-right-long {
+        margin-top: 2%;
+        margin-left: 15%;
+    }
 }
 
 @media (min-width: 1536px) {
@@ -1142,6 +1548,58 @@ display: block;
 .tattoo-artist-name  p {
     font-size: 20px;
 }
+
+/* CONTACT SECTION  */
+.grid-wrapper {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    text-align: left;
+
+}
+.first-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 5% 0 5%;
+ }
+ .contact-title {
+    font-size: 15vw;
+    text-align: left;
+    margin-top: 5%;
+ }
+
+ .slogan {
+    height: 70%;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+ }
+ .contact-wrapper {
+    position: absolute;
+    bottom: 0;
+ }
+ .contact-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; 
+    width: 90vw; 
+    margin: 5% 4%;
+}
+.send-us {
+    font-size: 1.7vw;   
+}
+.contact-heading {
+    font-size: 1.3vw ;
+    margin-top: 30px;
+}
+.contact-info {
+    font-size: 1.3vw;
+    margin: 2.5% 0 0 0;
+    
+}
+.fa-arrow-right-long {
+    margin-top: 2%;
+    margin-left: 15%;
+}
 }
 
 @media (min-width: 2560px) {
@@ -1211,7 +1669,7 @@ display: block;
         width: 80vw;
     }
     /* ABOUT SECTION  */
-    .about-bg {
+    .about-bg { 
         width: 100%;
         margin:  0;
     }
@@ -1274,6 +1732,58 @@ display: block;
     .clients-gallery {
         margin: 15% 5% ; 
         gap: 10px; 
+    }
+
+     /* CONTACT SECTION  */
+     .grid-wrapper {
+        position: absolute;
+        bottom: 0;
+        width:100%;
+        text-align: left;
+    
+    }
+    .first-grid{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        margin: 0 5% 0 5%;
+     }
+     .contact-title {
+        font-size: 15vw;
+        text-align: left;
+        margin-top: 5%;
+     }
+    
+     .slogan {
+        height: 70%;
+        position: absolute;
+        right: 5%;
+        top: 10%;
+     }
+     .contact-wrapper {
+        position: absolute;
+        bottom: 0;
+     }
+     .contact-grid{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr; 
+        width: 90vw; 
+        margin: 5% 4%;
+    }
+    .send-us {
+        font-size: 1.7vw;   
+    }
+    .contact-heading {
+        font-size: 1.3vw ;
+        margin-top: 30px;
+    }
+    .contact-info {
+        font-size: 1.3vw;
+        margin: 2.5% 0 0 0;
+        
+    }
+    .fa-arrow-right-long {
+        margin-top: 2%;
+        margin-left: 15%;
     }
 }
 
