@@ -32,3 +32,28 @@ document.querySelectorAll(".nav-menu").forEach( n => n.addEventListener("click",
     hamburger.classList.remove("active")
     navMenu.classList.remove("active")
 }))
+
+// FAQ SECTION 
+let toggles = document.getElementsByClassName('toggle');
+let contentdiv = document.getElementsByClassName('content');
+let icon = document.getElementsByClassName('icon');
+
+console.log(toggles, contentdiv, icon);
+
+for (let i = 0 ; i < toggles.length; i++){
+    toggles[i].addEventListener('click', ()=> {
+        if( parseInt(contentdiv[i].style.height) 
+        != contentdiv[i].scrollHeight){
+        contentdiv[i].style.height = contentdiv
+        [i].scrollHeight + "px";
+        icon[i].classList.remove('fa-plus');
+        icon[i].classList.add('fa-minus');
+        }
+        else {
+            contentdiv[i].style.height = "0px";
+            icon[i].classList.remove('fa-minus');
+            icon[i].classList.add('fa-plus');
+        }
+
+    })
+}
