@@ -20,6 +20,7 @@ p, h1, h2 {
 .preloader {
     background-color: var(--black);
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +30,7 @@ p, h1, h2 {
   background: linear-gradient(90deg, #000, #fff, #000);
   background-repeat: no-repeat;
   background-size: 80%;
+  font-family:'Playfair Display', serif;  
   animation: animate 2s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -184,6 +186,7 @@ nav {
     position: relative;
 }
 .find-us {
+    font-family:'Playfair Display', serif;  
     rotate: 90deg;
     transition: transform .5s ease-in-out;
     -moz-transition: transform .5s ease-in-out;
@@ -473,8 +476,6 @@ display: block;
     }
 }
 
-
-
  /* FAQ SECTION  */
 .faq-title {
     font-size: 7vw;
@@ -521,14 +522,112 @@ display: block;
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 500px){
+    /* NAVBAR / SIDEBAR */
+    .hamburger {
+        display: block;
+        z-index: 998;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -200%;
+        top: 0;
+        gap: 0px;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(0, 0, 0);
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;   
+        z-index: 997;
+    }
+    .nav-item {
+        margin: 16px 0;
+        font-size: 24px; 
+    }
+    .nav-menu.active {
+        left: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .left-menu-wrapper,
+    .right-menu-wrapper {
+        width: 15vw;
+    }
+    .left-menu-bar {
+        width: 20px;
+        height: 1.5px;
+        margin: 8px auto;
+    }
+    .left-menu-bar:nth-child(1) {
+        width: 30px;
+    }
+    .left-menu-bar:nth-child(3) {
+        width: 30px;
+    }
+    .find-us {
+        font-size: 24px;   
+    }
+    .hover_content p {
+        font-size: 2.5vw;
+    }
+    .hover_content {
+        width: 30vw;
+        padding: 0.2em 1em;
+    }
+    .fb , .insta , .tiktok {
+        padding-top: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    .right-menu {
+        opacity: 0;
+    }
     .left-menu {
         display: none;
     }
     .find-us_wrapper  {
         opacity: 0;
     }
-   
+ /* TATTOOIST WORK SECTION */
+ .tattoo-artist-wrapper {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    top:  10%;
+    display: grid;
+    place-content: center;
+}
+.tattoo-artist {
+    height: 18em;
+    width: 18em;
+    margin: 0% 0 20% 0;
+    position: relative;  
+}
+.tattoo-artist-name {
+    position: relative;
+    right: 0;
+    text-align: center;  
+}
+.tattoo-artist-name  h1 {
+    font-size: 40px;
+}
+.tattoo-artist-name  p {
+    font-size: 20px;
+}
+.clients-gallery { 
+    margin: 40% 10%;
+}
   /* CONTACT SECTION  */
  .first-grid{
     display: grid;
@@ -623,7 +722,7 @@ display: block;
 } 
     
 }
-@media (width <= 768px) {
+@media (width > 500px) and (width = 768px) {
     /* NAVBAR / SIDEBAR */
     .hamburger {
         display: block;
@@ -759,7 +858,7 @@ display: block;
         z-index: 2;
     }
     .tattoo-artist-name  h1 {
-        font-size: 40px;
+        font-size: 5vw;
     }
     .tattoo-artist-name  p {
         font-size: 20px;
@@ -986,7 +1085,7 @@ display: block;
         font-size: 20px;
     }
     .clients-gallery {
-        margin-top: 20%;  
+        margin-top: 25%;  
     }
 
      /* CONTACT SECTION  */
