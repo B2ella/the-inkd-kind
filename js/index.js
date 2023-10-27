@@ -33,6 +33,21 @@ document.querySelectorAll(".nav-menu").forEach( n => n.addEventListener("click",
     navMenu.classList.remove("active")
 }))
 
+//About section
+const tabs = document.querySelectorAll('.about-tab')
+const aboutContent = document.querySelectorAll('.about_content')
+const initalInfo =  document.getElementById('our_mission')
+
+tabs.forEach((tab,index)=> {
+    tab.addEventListener('click', ()=> {
+        initalInfo.style.display= 'none';
+        tabs.forEach(tab => {tab.classList.remove('active')})
+        tab.classList.add('active');
+        aboutContent.forEach(content => { content.classList.remove('active')})
+        aboutContent[index].classList.add('active') 
+    })
+})
+
 // FAQ SECTION 
 let toggles = document.getElementsByClassName('toggle');
 let contentdiv = document.getElementsByClassName('content');

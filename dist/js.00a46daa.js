@@ -150,6 +150,24 @@ document.querySelectorAll(".nav-menu").forEach(function (n) {
   });
 });
 
+//About section
+var tabs = document.querySelectorAll('.about-tab');
+var aboutContent = document.querySelectorAll('.about_content');
+var initalInfo = document.getElementById('our_mission');
+tabs.forEach(function (tab, index) {
+  tab.addEventListener('click', function () {
+    initalInfo.style.display = 'none';
+    tabs.forEach(function (tab) {
+      tab.classList.remove('active');
+    });
+    tab.classList.add('active');
+    aboutContent.forEach(function (content) {
+      content.classList.remove('active');
+    });
+    aboutContent[index].classList.add('active');
+  });
+});
+
 // FAQ SECTION 
 var toggles = document.getElementsByClassName('toggle');
 var contentdiv = document.getElementsByClassName('content');
@@ -196,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52657" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57522" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
